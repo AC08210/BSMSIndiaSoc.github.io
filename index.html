@@ -102,17 +102,11 @@
     <header>
       <div class="brand">
         <div class="logo" aria-hidden>
-          <!-- stylized tricolour mark -->
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="0" width="100" height="33" fill="#ff9933" />
-            <rect x="0" y="33" width="100" height="34" fill="#fff" />
-            <rect x="0" y="67" width="100" height="33" fill="#138808" />
-            <circle cx="50" cy="50" r="18" fill="rgba(0,0,0,0.06)" />
-          </svg>
+          <img src="images/Copy of Transparent.png" alt= "Logo" width="200">
         </div>
         <div>
-          <h1 class="site-title">BSMS IndiaSoc</h1>
-          <p class="tag">Brighton &amp; Sussex Medical School — celebrating South Asian culture</p>
+          <h1 class="site-title">BSMS India Society</h1>
+          <p class="tag">Brighton &amp; Sussex Medical School</p>
         </div>
       </div>
 
@@ -136,12 +130,12 @@
         <div class="hero">
           <div class="hero-left card">
             <h2>Welcome to BSMS IndiaSoc 👋</h2>
-            <p>We organise cultural nights, talks, food socials and wellbeing spaces celebrating South Asian heritage. Everyone is welcome.</p>
+            <p>We organise cultural nights, talks, food Events and wellbeing spaces celebrating South Asian heritage. Everyone is welcome.</p>
 
             <div style="margin:12px 0">
               <span class="pill">Diwali &amp; Rangoli</span>
               <span class="pill">Bollywood Nights</span>
-              <span class="pill">Curry Socials</span>
+              <span class="pill">Academic Events</span>
               <span class="pill">Talks &amp; Wellbeing</span>
             </div>
 
@@ -173,7 +167,7 @@
               <h4 style="margin:0 0 8px 0">Upcoming events</h4>
 
               <!-- Swiper carousel -->
-              <div class="swiper" id="eventsSwiper">
+              <div class="swiper" id="Eventswiper">
                 <div class="swiper-wrapper">
                   <!-- slides populated by JS -->
                 </div>
@@ -196,7 +190,7 @@
                 <p style="color:var(--muted);margin-top:8px">An evening of music, dance and student performances.</p>
               </div>
               <div class="card">
-                <h4 style="margin:0">Curry Socials</h4>
+                <h4 style="margin:0">Academic Events</h4>
                 <p style="color:var(--muted);margin-top:8px">Regular dinners and recipe swaps — vegetarian options available.</p>
               </div>
               <div class="card">
@@ -212,7 +206,7 @@
       <section id="about" class="page" style="display:none">
         <div class="card">
           <h3>About BSMS IndiaSoc</h3>
-          <p style="color:var(--muted)">We are a student society at Brighton & Sussex Medical School celebrating South Asian culture through events, socials and discussion. We run cultural nights, food socials and wellbeing sessions and collaborate with other societies.</p>
+          <p style="color:var(--muted)">We are a student society at Brighton & Sussex Medical School celebrating South Asian culture through events, Events and discussion. We run cultural nights, food Events and wellbeing sessions and collaborate with other societies.</p>
         </div>
 
         <section style="margin-top:14px">
@@ -402,13 +396,13 @@
 
     /* --- Sample events data & populate Swiper --- */
     const events = [
-      {title:'Curry Social — Welcome Back', date:'2025-09-20', img:'https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1000&q=60', desc:'Casual evening of homemade curries, music and board games.'},
+      {title:'Academic Events — Welcome Back', date:'2025-09-20', img:'https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1000&q=60', desc:'Casual evening of homemade curries, music and board games.'},
       {title:'Bollywood Dance Workshop', date:'2025-10-10', img:'https://images.unsplash.com/photo-1514512364185-6d8f1dfc5be7?auto=format&fit=crop&w=1000&q=60', desc:'Learn a group routine. No experience required.'},
       {title:'Diwali Celebration', date:'2025-11-12', img:'https://images.unsplash.com/photo-1542736667-069246bdbc93?auto=format&fit=crop&w=1000&q=60', desc:'Lights, sweets, performances & community dinner.'}
     ];
 
     // populate swiper slides
-    const swiperWrap = document.querySelector('#eventsSwiper .swiper-wrapper');
+    const swiperWrap = document.querySelector('#Eventswiper .swiper-wrapper');
     events.forEach(ev=>{
       const slide = document.createElement('div'); slide.className='swiper-slide';
       const card = document.createElement('div'); card.className='event-card'; card.style.backgroundImage=`url(${ev.img})`;
@@ -417,7 +411,7 @@
       swiperWrap.appendChild(slide);
     });
 
-    const swiper = new Swiper('#eventsSwiper',{
+    const swiper = new Swiper('#Eventswiper',{
       slidesPerView:1,spaceBetween:12,loop:true,autoplay:{delay:4000,disableOnInteraction:false},
       pagination:{el:'.swiper-pagination',clickable:true},
       navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},
@@ -452,7 +446,7 @@
       {name:'Imran Ali', role:'Treasurer', img:'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=400&q=60'},
       {name:'Sara Begum', role:'Secretary', img:'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?auto=format&fit=crop&w=400&q=60'},
       {name:'Karan Mehta', role:'Media Lead', img:'https://images.unsplash.com/photo-1531123414780-f9a6b8c8a6f2?auto=format&fit=crop&w=400&q=60'},
-      {name:'Nadia Khan', role:'Socials', img:'https://images.unsplash.com/photo-1545996124-1b4b0b9ccf4b?auto=format&fit=crop&w=400&q=60'},
+      {name:'Nadia Khan', role:'Events', img:'https://images.unsplash.com/photo-1545996124-1b4b0b9ccf4b?auto=format&fit=crop&w=400&q=60'},
       {name:'Arjun Singh', role:'Performances', img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=60'},
       {name:'Leela Rao', role:'Outreach', img:'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?auto=format&fit=crop&w=400&q=60'},
       {name:'Mohammed Yusuf', role:'Welfare Rep', img:'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=400&q=60'},

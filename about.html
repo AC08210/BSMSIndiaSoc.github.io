@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <h3>About</h3>
+  <p class="muted">BSMS IndiaSoc is a society at Brighton &amp; Sussex Medical School dedicated to celebrating South Asian culture.</p>
+</section>
+
+<section class="card">
+  <h3>Committee</h3>
+  <div class="committee-grid">
+    {% for c in committee %}
+      <div class="person">
+        <img src="{{ c['img'] }}" alt="{{ c['name'] }}">
+        <h4>{{ c['name'] }}</h4>
+        <div class="role">{{ c['role'] }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

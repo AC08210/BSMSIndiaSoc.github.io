@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero card">
+  <div class="hero-left">
+    <h2>Welcome to BSMS IndiaSoc</h2>
+    <p>We celebrate South Asian culture — food, music, talks and community.</p>
+    <div class="pills">
+      <span class="pill">Diwali & Rangoli</span>
+      <span class="pill">Bollywood Nights</span>
+      <span class="pill">Curry Socials</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn-primary" href="{{ url_for('events_page') }}">See Events</a>
+      <a class="btn" href="{{ url_for('contact') }}">Contact</a>
+    </div>
+
+    <div class="stats">
+      <div><strong>120+</strong><div class="muted">Members</div></div>
+      <div><strong>15</strong><div class="muted">Events / year</div></div>
+      <div><strong>Free</strong><div class="muted">Open to all</div></div>
+    </div>
+
+  </div>
+
+  <aside class="hero-right card">
+    <h4>Upcoming events</h4>
+    <div class="swiper events-swiper">
+      <div class="swiper-wrapper">
+        {% for ev in events %}
+          <div class="swiper-slide">
+            <a class="event-card" href="{{ url_for('events_page') }}" style="background-image:url('{{ ev['img'] }}')">
+              <div class="label">{{ ev['title'] }}</div>
+              <div class="ev-date">{{ ev['date'] }}</div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </aside>
+</section>
+
+<section class="card highlights">
+  <h3>Highlights</h3>
+  <div class="grid-3">
+    <div class="card"><h4>Culture Night</h4><p class="muted">Music, dance and student performances.</p></div>
+    <div class="card"><h4>Curry Socials</h4><p class="muted">Food socials and recipe swaps.</p></div>
+    <div class="card"><h4>Talks & Wellbeing</h4><p class="muted">Panels and wellbeing sessions.</p></div>
+  </div>
+</section>
+
+<section class="card committee">
+  <h3>Meet the committee</h3>
+  <div class="committee-grid">
+    {% for c in committee %}
+      <div class="person">
+        <img src="{{ c['img'] }}" alt="{{ c['name'] }}">
+        <h4>{{ c['name'] }}</h4>
+        <div class="role">{{ c['role'] }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

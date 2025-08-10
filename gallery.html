@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <h3>Gallery</h3>
+  <div class="grid-3">
+    {% for g in gallery %}
+      <div class="card"><div class="img" style="background-image:url('{{ g['img'] }}');height:160px;border-radius:8px"></div>
+      <div class="muted">{{ g['caption'] }}</div></div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
